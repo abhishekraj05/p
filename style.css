@@ -1,0 +1,240 @@
+:root {
+    --bg: #050505;
+    --text: #ffffff;
+    --gold: #d4af37;
+    --pink: #ff6b6b;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+/* --- 1. MAGICAL OVERLAY --- */
+.overlay {
+    position: fixed; inset: 0;
+    background: radial-gradient(circle at center, #2E1437, #000000);
+    z-index: 999;
+    display: flex; justify-content: center; align-items: center; text-align: center;
+    transition: opacity 1.2s ease-in-out;
+}
+
+/* Floating Lights Animation */
+.overlay-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
+.light {
+    position: absolute; border-radius: 50%; filter: blur(30px); opacity: 0.4;
+    animation: float 15s infinite linear;
+}
+.light-1 { top: 20%; left: 20%; width: 150px; height: 150px; background: var(--pink); animation-duration: 20s; }
+.light-2 { bottom: 30%; right: 10%; width: 200px; height: 200px; background: var(--gold); animation-delay: -5s; animation-duration: 25s; }
+.light-3 { top: 60%; left: 50%; width: 100px; height: 100px; background: #9b5de5; animation-delay: -10s; }
+
+@keyframes float {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(100px, -100px) rotate(180deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+/* Entry Content */
+.header-icon { font-size: 3rem; color: var(--pink); margin-bottom: 20px; animation: heartbeat 1.5s infinite; }
+.glow-text { font-size: 3rem; color: white; text-shadow: 0 0 15px rgba(255, 107, 107, 0.6); }
+.overlay p { color: #ccc; margin: 15px 0 30px; letter-spacing: 1px; }
+
+.enter-btn {
+    padding: 15px 40px; background: linear-gradient(45deg, var(--pink), #ff8e53);
+    border: none; color: white; font-size: 1.2rem; border-radius: 50px; cursor: pointer;
+    box-shadow: 0 10px 20px -10px rgba(255, 107, 107, 0.5); transition: 0.3s;
+}
+.enter-btn:hover { transform: translateY(-3px) scale(1.05); }
+
+/* --- 2. SECTIONS & LAYOUT --- */
+.hidden { display: none; }
+.fade-out { opacity: 0; pointer-events: none; }
+
+.section {
+    min-height: 100vh; padding: 60px 20px;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    text-align: center;
+}
+.title {
+    font-size: 2.5rem; color: var(--gold); margin-bottom: 40px;
+    border-bottom: 2px solid var(--gold); padding-bottom: 10px; display: inline-block;
+}
+
+/* Hero */
+.hero h1 { font-size: 4rem; margin-bottom: 10px; }
+.scroll-down { margin-top: 50px; animation: bounce 2s infinite; opacity: 0.7; font-size: 0.9rem; }
+.scroll-down i { display: block; margin-top: 10px; }
+
+/* Timeline */
+.timeline { border-left: 2px solid var(--gold); padding-left: 25px; max-width: 600px; text-align: left; }
+.event { margin-bottom: 40px; position: relative; }
+.dot { position: absolute; left: -34px; top: 5px; width: 16px; height: 16px; background: var(--gold); border-radius: 50%; box-shadow: 0 0 10px var(--gold); }
+.event h3 { color: var(--pink); margin-bottom: 5px; font-size: 1.5rem; }
+
+/* Gallery (Grid) */
+.gallery-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;
+    max-width: 1000px; width: 100%;
+}
+.photo-item {
+    aspect-ratio: 1; overflow: hidden; border-radius: 10px; border: 1px solid var(--glass);
+    transition: transform 0.3s;
+}
+.photo-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.photo-item:hover { transform: scale(1.02); z-index: 10; border-color: var(--gold); }
+.photo-item:hover img { transform: scale(1.1); }
+
+/* Reasons Cards */
+.cards-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+.reason-card {
+    background: var(--glass); padding: 30px; width: 260px;
+    border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s;
+}
+.reason-card i { font-size: 2.5rem; color: var(--pink); margin-bottom: 15px; }
+.reason-card:hover { transform: translateY(-10px); background: rgba(255,255,255,0.08); border-color: var(--pink); }
+
+/* Letter */
+.paper {
+    background: #111; padding: 40px; max-width: 600px; width: 100%;
+    border: 1px solid var(--gold); text-align: left; line-height: 1.8;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+}
+
+/* Finale */
+.big-text {
+    font-size: 4rem; background: linear-gradient(to right, var(--pink), var(--gold));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px;
+}
+.whatsapp-btn {
+    padding: 15px 40px; background: #25D366; border: none; color: white;
+    font-size: 1.2rem; border-radius: 50px; cursor: pointer;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4); margin-top: 20px; transition: 0.3s;
+}
+.whatsapp-btn:hover { transform: scale(1.1); }
+
+/* Animations */
+.fade-in { opacity: 0; animation: fadeIn 2s forwards; }
+.delay-1 { animation-delay: 1s; }
+.pulse-fast { animation: pulse-btn 1.5s infinite; }
+.reveal { opacity: 0; transform: translateY(50px); transition: all 1s ease; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+@keyframes fadeIn { to { opacity: 1; } }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
+@keyframes heartbeat { 0% { transform: scale(1); } 15% { transform: scale(1.15); } 30% { transform: scale(1); } 45% { transform: scale(1.15); } 60% { transform: scale(1); } }
+@keyframes pulse-btn { 0% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(255, 107, 107, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0); } }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero h1 { font-size: 3rem; }
+    .big-text { font-size: 3rem; }
+    .title { font-size: 2rem; }
+    .paper { padding: 25px; }
+}
+
+
+/* --- HERO SECTION (PREMIUM ANIMATED) --- */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    /* Thoda sa depth dene ke liye */
+    background: radial-gradient(circle at center, rgba(46, 20, 55, 0.4), transparent); 
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+/* 1. Main Title "It's You" */
+.hero-title {
+    /* Responsive Font Size: Mobile pe chota, Desktop pe bada apne aap hoga */
+    font-size: clamp(3.5rem, 10vw, 7rem); 
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    
+    /* Text Gradient & Shine Effect */
+    background: linear-gradient(to right, #ffffff, #d4af37, #ff6b6b, #ffffff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Animations: Shine + Zoom + Fade In */
+    animation: shine 4s linear infinite, zoomIn 2s ease-out forwards;
+    opacity: 0; /* Start hidden */
+}
+
+/* 2. Subtitle "It has always been you" */
+.hero-subtitle {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: #ccc;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out 1s forwards; /* 1 second delay */
+}
+
+/* --- ANIMATIONS KEYFRAMES --- */
+
+/* Text ke upar light ghumne wala effect */
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* Text bada hone wala cinematic effect */
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+        filter: blur(10px); /* Shuru mein dhundhla */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: blur(0); /* Baad mein saaf */
+    }
+}
+
+/* Subtitle niche se upar aane wala effect */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 0.8;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll Down Button Animation */
+.scroll-down {
+    position: absolute;
+    bottom: 40px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    animation: bounce 2s infinite;
+    letter-spacing: 2px;
+}
+
+.scroll-down i {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: var(--gold);
+}
+
+

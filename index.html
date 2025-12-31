@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <audio id="bgMusic" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="overlay" id="overlay">
+        <div class="overlay-bg">
+            <div class="light light-1"></div>
+            <div class="light light-2"></div>
+            <div class="light light-3"></div>
+        </div>
+
+        <div class="content">
+            <i class="fas fa-heartbeat header-icon"></i>
+            <h1 class="glow-text">A Surprise Awaits...</h1>
+            <p>For the best experience, please use headphones 🎧</p>
+            <button class="enter-btn pulse-fast" onclick="startJourney()">Open My Heart ❤️</button>
+        </div>
+    </div>
+
+    <div class="container hidden" id="mainContainer">
+        
+        <section class="hero section">
+            <div class="hero-content">
+                <h1 class="hero-title">It's You.</h1>
+                <p class="hero-subtitle">It has always been you.</p>
+            </div>
+            
+            <div class="scroll-down">
+                <span>Scroll Down</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <section class="timeline-section section">
+            <h2 class="title fade-in-scroll">Our Journey</h2>
+            <div class="timeline">
+                <div class="event fade-in-scroll">
+                    <div class="dot"></div>
+                    <h3>First Met</h3>
+                    <p>Sona wo din mere lea bhout khas jab maine first tumhe dekha tha.</p>
+                </div>
+                <div class="event fade-in-scroll">
+                    <div class="dot"></div>
+                    <h3>First Date</h3>
+                    <p>har din sona khas hai humare lea.</p>
+                </div>
+                <div class="event fade-in-scroll">
+                    <div class="dot"></div>
+                    <h3>2025 Memories</h3>
+                    <p>Every moment spent with you was magic.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section section">
+            <h2 class="title fade-in-scroll">Moments That Matter</h2>
+            <div class="gallery-grid">
+                <div class="photo-item fade-in-scroll"><img src="1.jpeg" alt="Memory"></div>
+                <div class="photo-item fade-in-scroll"><img src="5.jpeg" alt="Memory"></div>
+                <div class="photo-item fade-in-scroll"><img src="10.jpeg" alt="Memory"></div>
+                <div class="photo-item fade-in-scroll"><img src="3.jpeg" alt="Memory"></div>
+                <div class="photo-item fade-in-scroll"><img src="4.jpeg" alt="Memory"></div>
+                <div class="photo-item fade-in-scroll"><img src="6.jpeg" alt="Memory"></div>
+                <div class="photo-item fade-in-scroll"><img src="7.jpeg" alt="Memory"></div>
+                <div class="photo-item fade-in-scroll"><img src="11.jpeg" alt="Memory"></div>
+            </div>
+        </section>
+
+        <section class="reasons-section section">
+            <h2 class="title fade-in-scroll">Why You?</h2>
+            <div class="cards-container">
+                <div class="reason-card fade-in-scroll">
+                    <i class="fas fa-smile-beam"></i>
+                    <h3>Your Smile</h3>
+                    <p>It lights up my darkest days.</p>
+                </div>
+                <div class="reason-card fade-in-scroll">
+                    <i class="fas fa-heart"></i>
+                    <h3>Your Heart</h3>
+                    <p>Pure, kind, and full of love.</p>
+                </div>
+                <div class="reason-card fade-in-scroll">
+                    <i class="fas fa-infinity"></i>
+                    <h3>Us</h3>
+                    <p>We just make sense together.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="letter-section section">
+            <div class="paper fade-in-scroll">
+                <h2>My Promise</h2>
+                <p id="typewriterText"></p>
+            </div>
+        </section>
+
+        <section class="finale section">
+            <h1 class="big-text">Happy New Year<br>2026</h1>
+            <p>Let's create more memories together.</p>
+            <button class="whatsapp-btn" onclick="sendWhatsApp()">Love You Too ❤️</button>
+        </section>
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
